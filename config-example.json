@@ -1,0 +1,6 @@
+{
+    "token": "your_bot_token",
+    "clientId": "your_bot_account_id",
+	"guildId": "your_test_server_id",
+    "interval": "minutes_between_updates"
+}
