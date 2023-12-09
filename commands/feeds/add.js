@@ -18,7 +18,7 @@ module.exports = {
         const coomer = await read("./data/creators-coomer.json")
         const data = kemono.concat(coomer);
         const choices = Object.values(data).map(creator => creator.name);
-        let filtered = choices.filter(choice => choice.startsWith(focusedValue));
+        let filtered = choices.filter(choice => choice.toLowerCase().startsWith(focusedValue.toLowerCase()));
         filtered = filtered.slice(0, 25);
         await interaction.respond(
             filtered.map(choice => ({ name: choice, value: choice })),

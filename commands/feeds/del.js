@@ -18,7 +18,7 @@ module.exports = {
         if (data[interaction.guildId] === undefined) {return;}
         if (data[interaction.guildId][interaction.channelId] === undefined) {return;}
         const choices = Object.values(data[interaction.guildId][interaction.channelId]).map(creator => creator.name);
-        const filtered = choices.filter(choice => choice.startsWith(focusedValue));
+        const filtered = choices.filter(choice => choice.toLowerCase().startsWith(focusedValue.toLowerCase()));
         await interaction.respond(
             filtered.map(choice => ({ name: choice, value: choice })),
         );

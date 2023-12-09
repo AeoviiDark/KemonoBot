@@ -19,7 +19,7 @@ module.exports = {
         if (data[interaction.guildId][interaction.channelId] === undefined) {return;}
         let choices = Object.values(data[interaction.guildId][interaction.channelId]).filter(creator => !creator.subscribers.includes(interaction.member.id))
         choices = choices.map(creator => creator.name);
-        let filtered = choices.filter(choice => choice.startsWith(focusedValue));
+        let filtered = choices.filter(choice => choice.toLowerCase().startsWith(focusedValue.toLowerCase()));
         filtered = filtered.splice(0,25);
         await interaction.respond(
             filtered.map(choice => ({ name: choice, value: choice })),
