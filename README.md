@@ -9,7 +9,7 @@ This is a discord bot that retrieves updates from creators on [kemono.part](http
 - **`/sub`** {name}
 <dl>
    <dd>Subscribe to a creator in the channel. You will be mentioned when a creator you've subscribed to posts.</dd>
-</dl>
+
 - **`/unsub`** {name}
    Unsubscribe from a creator in the channel.
 - **`/list`** 
