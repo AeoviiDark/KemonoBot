@@ -28,10 +28,10 @@ This is a discord bot that retrieves updates from creators on [kemono.part](http
 
 ## Self Hosting Guide
 1. **Clone the repository.**
-   Open a terminal in the directory you want to clone the repository to and run `git clone https://github.com/AeoviiDark/KemonoBot.git`.
+   Open a terminal in the directory you want to clone the repository to and run ```git clone https://github.com/AeoviiDark/KemonoBot.git```.
 
 2. **Install node.**
-   In your terminal, run `npm install node`. I think??
+   In your terminal, run ```npm install node```. I think??
 
 3. **Install dependencies**
    uh, Ill get this later.
@@ -48,13 +48,13 @@ This is a discord bot that retrieves updates from creators on [kemono.part](http
    Once you have your information filled out, save the json file and rename it to `config.js`.
 
 6. **Register the commands.**
-   In the KemonoBot repository directory, run `node deploy-commands.js`. If you set guildId in config.json, the commands will only be registered to the server with that Id, otherwise the commands will be registered globally.
+   In the KemonoBot repository directory, run ```node deploy-commands.js```. If you set guildId in config.json, the commands will only be registered to the server with that Id, otherwise the commands will be registered globally.
 
 7. **Launch it!**
-   Run `node index.js` to start the bot.
+   Run ```node index.js``` to start the bot.
 
 ## Why is my code so bad?
-   Only a week ago I had no idea how to code in javascript. However, I'm somewhat compotent in in some other languages so I kind of know what I'm doing half the time. I know my code is ugly inefficient and probably has some exploit that I'm too inexperienced to spot. If you do see an improvement or fix to something, let me know and I'll do my best to address it. How you contact me? Uhh... maybe find me on discord? idk if github has a msging thing or if you can request to change code on a repository. tbh this is my first project like on this on github so I've no idea what I'm doing. 
+   Only a week ago I had no idea how to code in javascript. However, I'm somewhat compotent in in some other languages so I kind of know what I'm doing half the time. I know my code is ugly, inefficient, and probably has some exploit that I'm too inexperienced to spot. If you do see an improvement or fix to something, let me know and I'll do my best to address it. How you contact me? Uhh... maybe find me on discord? idk if github has a msging thing or if you can request to change code on a repository. tbh this is my first project like on this on github so I've no idea what I'm doing. 
 
 ## Probably something else that I'm forgetting.
    Oh well, Ill add it when I think of it.
