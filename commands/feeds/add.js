@@ -32,6 +32,8 @@ module.exports = {
             if (foundCreator === undefined) { interaction.reply(`There is no creator with the name "${input}".`); return; }
         } else {
             foundCreator = await lookupId(input.split('/')[5]);
+            console.log(input.split('/')[5]);
+            console.log(foundCreator)
             if (foundCreator === undefined) { interaction.reply(`The url cannot be resolved.`); return; }
         }
         addCreator(interaction, foundCreator)

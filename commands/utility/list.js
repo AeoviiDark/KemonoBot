@@ -1,11 +1,19 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { listCreators } = require('../../lib/dbms.js');
+const { read, listCreators } = require('../../lib/dbms.js');
 
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('list')
         .setDescription("List all creators in this channel's feed."),
     async execute(interaction) {
+        const data = await read();
+        // for (const creator of data[interaction.guildId][interaction.channelId]) {
+
+        // }
+
+
+
+
         listCreators(interaction)
             .then(creators => {
                 if (!creators.length) {
