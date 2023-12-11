@@ -3,37 +3,45 @@ This is a discord bot that retrieves updates from creators on [kemono.part](http
 
 ## Discord Commands
 - **`/add`** {name} || {url}
- - Add a creator to the current channel. 
+   <dl>Add a creator to the current channel.</dl>
 - **`/del`** {name} || all
- - Delete a creator from the current channel. Delete all creators with `/del all`
+   <dd>Delete a creator from the current channel. Delete all creators with `/del all`</dd>
 - **`/sub`** {name}
- - Subscribe to a creator in the channel. You will be mentioned when a creator you've subscribed to posts.
+<dl>
+   <dd>Subscribe to a creator in the channel. You will be mentioned when a creator you've subscribed to posts.</dd>
+</dl>
 - **`/unsub`** {name}
- - Unsubscribe from a creator in the channel.
+   Unsubscribe from a creator in the channel.
 - **`/list`** 
- - List all creators in the current channel along with some additional information.
+   List all creators in the current channel along with some additional information.
 - **`/version`**
- - Displays the current version of KemonoBot.
+   Displays the current version of KemonoBot.
 ### Future Commands
 - **`/info`** {name}
- - Get more information on a specific creator than what /list provides.
+   Get more information on a specific creator than what /list provides.
 - **`/export`** {channel} || {server}, {bool include settings}
- - Generate a json file containing all of the creators (with optional settings) for the current channel/server.
+   Generate a json file containing all of the creators (with optional settings) for the current channel/server.
 - **`/import`** {.json file attachment}
- - Import a generated json file of creators and settings to be added into the current channel/server
+   Import a generated json file of creators and settings to be added into the current channel/server
 - **`/filter`** {name} || all, {add} || {del} || {list}, {keyword(s) to exclude}, {title} || {description} || {summary?} || {tags}
- - Add/remove/list filters to/from exclude posts.
+   Add/remove/list filters to/from exclude posts.
 - **`/stats`** {bool adv}
- - Display current stats with optional advanced stats
+   Display current stats with optional advanced stats
 
 ## Self Hosting Guide
 1. **Clone the repository.**
 
-   Open a terminal in the directory you want to clone the repository to and run ```git clone https://github.com/AeoviiDark/KemonoBot.git```.
+   Open a terminal in the directory you want to clone the repository to and run 
+   ```
+   git clone https://github.com/AeoviiDark/KemonoBot.git
+   ```
 
 2. **Install node.**
 
-   In your terminal, run ```npm install node```. I think??
+   In your terminal, run 
+   ```
+   npm install node
+   ```
 
 3. **Install dependencies**
 
@@ -54,11 +62,18 @@ This is a discord bot that retrieves updates from creators on [kemono.part](http
 
 6. **Register the commands.**
 
-   In the KemonoBot repository directory, run ```node deploy-commands.js```. If you set guildId in config.json, the commands will only be registered to the server with that Id, otherwise the commands will be registered globally.
+   In the KemonoBot repository directory, run 
+   ```
+   node deploy-commands.js
+   ```
+   If you set guildId in config.json, the commands will only be registered to the server with that Id, otherwise the commands will be registered globally.
 
 7. **Launch it!**
 
-   Run ```node index.js``` to start the bot.
+   To start the bot, run
+   ```
+   node index.js
+   ``` 
 
 ## Why is my code so bad?
 
