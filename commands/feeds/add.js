@@ -24,7 +24,6 @@ module.exports = {
     },
     async execute(interaction) {
         const input = interaction.options.getString('nameurl');
-        console.log("the guy", input)
         const foundCreator = await lookupId(input);
         if (foundCreator === undefined) { interaction.reply(`The creator cannot be found.`); return; }
         addCreator(interaction, foundCreator)

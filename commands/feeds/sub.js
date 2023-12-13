@@ -1,5 +1,5 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { lookupName } = require('../../lib/util.js');
+const { lookupId } = require('../../lib/util.js');
 const { read, addSub } = require('../../lib/dbms.js');
 
 module.exports = {
@@ -17,17 +17,19 @@ module.exports = {
         const data = await read()
         if (data[interaction.guildId] === undefined) {return;}
         if (data[interaction.guildId][interaction.channelId] === undefined) {return;}
-        let choices = Object.values(data[interaction.guildId][interaction.channelId]).filter(creator => !creator.subscribers.includes(interaction.member.id))
-        choices = choices.map(creator => creator.name);
-        let filtered = choices.filter(choice => choice.toLowerCase().startsWith(focusedValue.toLowerCase()));
-        filtered = filtered.splice(0,25);
-        await interaction.respond(
-            filtered.map(choice => ({ name: choice, value: choice })),
-        );
+        // let choices = Object.values(data[interaction.guildId][interaction.channelId]).filter(creator => !creator.subscribers.includes(interaction.member.id))
+        // choices = choices.map(creator => creator.name);
+        // let filtered = choices.filter(choice => choice.toLowerCase().startsWith(focusedValue.toLowerCase()));
+        // filtered = filtered.splice(0,25);
+        // await interaction.respond(
+        //     filtered.map(choice => ({ name: choice, value: choice })),
+        // );
+        const filtered = Object.values(data[interaction.guildId][interaction.channelId]).filter(creator => !creator.subscribers.includes(interaction.member.id) && creator.name.toLowerCase().startsWith(focusedValue.toLowerCase())).slice(0,25);
+        await interaction.respond(filtered.map(choice => ({ name: `${choice.name} [${choice.service}]`, value: choice.id.split(' ')[0] })));
     },
     async execute(interaction) {
         const input = interaction.options.getString('name');
-        const foundCreator = await lookupName(input);
+        const foundCreator = await lookupId(input);
         if (foundCreator === undefined) { interaction.reply(`This creator does not exist in <#${interaction.channelId}>`); return; }
         addSub(interaction, foundCreator)
             .then(res => {

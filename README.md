@@ -1,5 +1,5 @@
 ## About
-This is a discord bot that retrieves updates from creators on [kemono.part](https://kemono.su) and [coomer.party](https://coomer.su). 
+This is a discord bot that retrieves updates from creators on [kemono.part](https://kemono.su) and [coomer.party](https://coomer.su). Updates will be sent to a discord server where the creator was added or to a dm if you add a creator in a direct message with the bot.
 
 ## Discord Commands
 - **`/add`** {name} || {url}
@@ -75,7 +75,14 @@ This is a discord bot that retrieves updates from creators on [kemono.part](http
 
 ## Why is my code so bad?
 
-   Only a week ago I had no idea how to code in javascript. However, I'm somewhat compotent in in some other languages so I kind of know what I'm doing half the time. I know my code is ugly, inefficient, and probably has some exploit that I'm too inexperienced to spot. If you do see an improvement or fix to something, let me know and I'll do my best to address it. How you contact me? Uhh... maybe find me on discord? idk if github has a msging thing or if you can request to change code on a repository. tbh this is my first project like on this on github so I've no idea what I'm doing. 
+   Only a week ago I had no idea how to code in javascript. However, I'm somewhat compotent in some other languages so I kind of know what I'm doing half the time. I know my code is ugly, inefficient, and probably has some exploit that I'm too inexperienced to spot. If you do see an improvement or fix to something, let me know and I'll do my best to address it. How you contact me? Uhh... maybe find me on discord? idk if github has a msging thing or if you can request to change code on a repository. tbh this is my first project like on this on github so I've no idea what I'm doing. 
+
+## Known issues. (AKA fix later list)
+- Astrisk (*) means it has not been tested, but I'm pretty sure it wont work.
+- Unknown embedding bug when setting description
+- Writing while checking for updates does not successfully write
+- Cannot add/del creators with spaces in name*
+- Sub/unsub doesnt work in dms*
 
 ## Probably something else that I'm forgetting.
 
