@@ -17,25 +17,16 @@ module.exports = {
         const kemono = await read("./data/creators-kemono.json")
         const coomer = await read("./data/creators-coomer.json")
         const data = kemono.concat(coomer);
-        const choices = Object.values(data).map(creator => creator.name);
-        let filtered = choices.filter(choice => choice.toLowerCase().startsWith(focusedValue.toLowerCase()));
-        filtered = filtered.slice(0, 25);
+        const filtered = Object.values(data).filter(creator => creator.name.toLowerCase().startsWith(focusedValue.toLowerCase())).slice(0,25);
         await interaction.respond(
-            filtered.map(choice => ({ name: choice, value: choice })),
+            filtered.map(choice => ({ name: `${choice.name} [${choice.service}]`, value: choice.id.split(' ')[0] })),
         );
     },
     async execute(interaction) {
         const input = interaction.options.getString('nameurl');
-        let foundCreator;
-        if (input.split('/')[0] !== 'https:') {
-            foundCreator = await lookupName(input);
-            if (foundCreator === undefined) { interaction.reply(`There is no creator with the name "${input}".`); return; }
-        } else {
-            foundCreator = await lookupId(input.split('/')[5]);
-            console.log(input.split('/')[5]);
-            console.log(foundCreator)
-            if (foundCreator === undefined) { interaction.reply(`The url cannot be resolved.`); return; }
-        }
+        console.log("the guy", input)
+        const foundCreator = await lookupId(input);
+        if (foundCreator === undefined) { interaction.reply(`The creator cannot be found.`); return; }
         addCreator(interaction, foundCreator)
             .then(res => {
                 interaction.reply(res);
