@@ -2,6 +2,8 @@ const { SlashCommandBuilder } = require('discord.js');
 const { lookupId } = require('../../lib/util.js');
 const { read, delCreator } = require('../../lib/dbms.js');
 
+let data = null;
+
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('del')
@@ -14,13 +16,13 @@ module.exports = {
                 .setAutocomplete(true)),
     async autocomplete(interaction) {
         const focusedValue = interaction.options.getFocused();
-        const data = await read()
+        if (data === null) {
+            data = await read()
+        }
         if (data[interaction.guildId] === undefined) {return;}
         if (data[interaction.guildId][interaction.channelId] === undefined) {return;}
         const filtered = Object.values(data[interaction.guildId][interaction.channelId]).filter(creator => creator.name.toLowerCase().startsWith(focusedValue.toLowerCase())).slice(0,25);
-        await interaction.respond(
-            filtered.map(choice => ({ name: `${choice.name} [${choice.service}]`, value: choice.id.split(' ')[0] })),
-        );
+        await interaction.respond(filtered.map(choice => ({ name: `${choice.name} [${choice.service}]`, value: choice.id.split(' ')[0] })));
     },
     async execute(interaction) {
         const input = interaction.options.getString('name');

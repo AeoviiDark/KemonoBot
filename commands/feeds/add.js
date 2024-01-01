@@ -1,6 +1,8 @@
 const { SlashCommandBuilder } = require('discord.js');
-const { lookupId, lookupName } = require('../../lib/util.js');
+const { lookupId } = require('../../lib/util.js');
 const { addCreator, read } = require('../../lib/dbms.js');
+
+let data = null;
 
 module.exports = {
     data: new SlashCommandBuilder()
@@ -14,9 +16,12 @@ module.exports = {
                 .setAutocomplete(true)),
     async autocomplete(interaction) {
         const focusedValue = interaction.options.getFocused();
-        const kemono = await read("./data/creators-kemono.json")
-        const coomer = await read("./data/creators-coomer.json")
-        const data = kemono.concat(coomer);
+        if (data === null) {
+            const kemono = await read("./data/creators-kemono.json")
+            const coomer = await read("./data/creators-coomer.json")
+            data = kemono.concat(coomer);
+            console.log('read')
+        }
         const filtered = Object.values(data).filter(creator => creator.name.toLowerCase().startsWith(focusedValue.toLowerCase())).slice(0,25);
         await interaction.respond(
             filtered.map(choice => ({ name: `${choice.name} [${choice.service}]`, value: choice.id.split(' ')[0] })),
