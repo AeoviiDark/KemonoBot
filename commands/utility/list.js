@@ -14,11 +14,12 @@ module.exports = {
                 }
                 let res = ""
                 for (let creator of creators){
-                    console.log(creator);
-                    res += `**${creator.name}**\n\
-                    id:\t\t\t${creator.id}\n\
-                    service:  ${creator.service}\n\
-                    website: [${creator.website}.party](<https://${creator.website}.su/${creator.service}/user/${creator.id}>)\n`
+                    res += `
+**${creator.name}**
+> id:\t\t\t${creator.id}
+> service:  ${creator.service}
+> website: [${creator.website}.party](<https://${creator.website}.su/${creator.service}/user/${creator.id}>)
+`;
                 }
                 console.log(res)
                 interaction.reply(res);

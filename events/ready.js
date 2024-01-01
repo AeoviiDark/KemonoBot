@@ -11,5 +11,9 @@ module.exports = {
 		updateFeeds(client);
 		setInterval(async () => {updateFeeds(client);}, interval*60*1000)
 
+
+		// client.users.fetch('893511129542819890', false).then((user) => {
+		// 	user.send('Beep boop. Use "/" to check out the available commands.');
+		// });
 	},
 };
