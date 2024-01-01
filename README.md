@@ -36,37 +36,48 @@ This is a discord bot that retrieves updates from creators on [kemono.part](http
 
 2. **Install node.**
 
-   In your terminal, run 
-   ```
-   npm install node
-   ```
+   Download nodejs from [nodejs.org](https://nodejs.org/en/download) and install it. You can confirm your installation with `node -v`.
 
-3. **Install dependencies**
+   If you need any help with steps 2-5, [discordjs.guide](https://discordjs.guide/preparations/#installing-node-js) probably explains all of this better under "Installations & Preparations."
 
-   uh, Ill get this later.
+3. **Install discordjs**
+
+   In your terminal, run
+   ```
+   npm install discordjs
+   ```
 
 4. **Create a bot on Discord's Developer Portal.**
 
-   later
+   Go to [Discord's developer portal](https://discord.com/developers/applications) and log into your account. Click on the "New Application" button, enter a name for the application, and confirm the creation. In the "Bot" tab, enter a username for the bot and set the visibility to public or private. Click "Reset Token" and copy this to a secure location. Discord only lets you access this once. If you lose this token, you will have to reset the token to gain another, invalidating the old token. 
 
-5. **Change your config.json.**
+5. **Invite your bot to your server.**
+   
+   In [Discord's developer portal](https://discord.com/developers/applications) and under your newly created application, click on the "OAuth2" tab. In the sidebar under the tab, click "OAuth2 URL generator." Select the `bot` and `applications.commands` scopes. Enable `Read Messagese/View Channels`, `Send Messages`, `Embed Links`, and `Attach Files` permissions.
+   Alternatively, you can manually construct an invite link by pasting your bot's client id into this url, replacing the three underscores: `https://discord.com/api/oauth2/authorize?client_id=___&permissions=52224&scope=applications.commands+bot`. (Your client id can be found under OAuth2/General) 
+   Finally, open the url and choose the server you would like to add the bot to.
+   
+
+6. **Change your config.json.**
 
    You will have a config-example.json in your KemonoBot directory. Create a duplicate and/or open the original with a text editor and enter the following information:
-   - `token`: With your new bot selected from the applications, under Bot, click the Reset Token button to generate a new token. Copy it down and save it. Discord only lets you access it once. If you lose this token, you will have to reset the token again to gain another.
-   - `clientId`: To get your bot's client id, you will have to enable developer mode on your discord client. Click User Settings, Advanced, and enable Developer Mode. Go back, right click the bot in the members list then Copy User ID at the bottom of the list. 
-   - `guildId`:  With developer mode enabled, right click your server's name in the top right and Copy Server ID. Set this if you want your bot's commands to be registerd only on this specific server. If instead you want the commands to be registered globally, leave this value blank.
+   - `token`: This is the token you should have saved in step 4.
+   - `clientId`: To get your bot's client id, you will have to enable developer mode on your discord client. Click User Settings, Advanced, and enable Developer Mode. Go back, right click the bot in the members list then Copy User ID at the bottom of the list. Alternatively, your client id can be found under OAuth2/General in [Discord's developer portal](https://discord.com/developers/applications).
+   - `guildId`:  With developer mode enabled, right click your server's name in the top right and Copy Server ID. Set this if you want your bot's commands to be registerd only on this specific server. If instead you want the commands to be registered globally on any server your bot is in, leave this value blank.
    - `interval`: This is how often you want the bot to check for updates. The default is 10 minutes and should accomodate most use cases. Anything lower isn't really necessary but if you need faster updates, the option is there at the cost of more internet bandwidth and compute power. Anything lower than 1 minute is not advised. Do be warned that the time it takes to search for updates is proportional to the amount of added creators, so set the interval accordingly. 
-   Once you have your information filled out, save the json file and rename it to `config.js`.
+   Once you have your information filled out, save the json file and rename it to `config.json`.
 
-6. **Register the commands.**
+7. **Register the commands.**
+
+   (This might happen automatically on first startup in the future.)
 
    In the KemonoBot repository directory, run 
    ```
    node deploy-commands.js
    ```
-   If you set guildId in config.json, the commands will only be registered to the server with that Id, otherwise the commands will be registered globally.
+   If you set a guildId in config.json, the commands will only be registered to the server with that Id, otherwise the commands will be registered globally.
 
-7. **Launch it!**
+8. **Launch it!**
 
    To start the bot, run
    ```
