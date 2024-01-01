@@ -53,7 +53,7 @@ This is a Discord bot that retrieves updates from creators on [kemono.part](http
 
 5. **Invite your bot to your server.**
    
-   In [Discord's developer portal](https://discord.com/developers/applications) and under your newly created application, click on the "OAuth2" tab. In the sidebar under the tab, click "OAuth2 URL generator." Select the `bot` and `applications.commands` scopes. Enable `Read Messagese/View Channels`, `Send Messages`, `Embed Links`, and `Attach Files` permissions.
+   In [Discord's developer portal](https://discord.com/developers/applications) and under your newly created application, click on the "OAuth2" tab. In the sidebar under the tab, click "OAuth2 URL generator." Select the `bot` and `applications.commands` scopes. Enable `Read Messages/View Channels`, `Send Messages`, `Embed Links`, and `Attach Files` permissions.
    
    Alternatively, you can manually construct an invite link by pasting your bot's client id into this url, replacing the three underscores: `https://discord.com/api/oauth2/authorize?client_id=___&permissions=52224&scope=applications.commands+bot`. (Your client id can be found under OAuth2/General) 
    
