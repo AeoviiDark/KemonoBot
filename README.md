@@ -1,5 +1,5 @@
 ## About
-This is a discord bot that retrieves updates from creators on [kemono.part](https://kemono.su) and [coomer.party](https://coomer.su). Updates will be sent to a discord server where the creator was added or to a dm if you add a creator in a direct message with the bot.
+This is a Discord bot that retrieves updates from creators on [kemono.part](https://kemono.su) and [coomer.party](https://coomer.su). Updates will be sent to a discord server where the creator was added or to a dm if you add a creator in a direct message with the bot.
 
 ## Discord Commands
 - **`/add`** {name} || {url}
@@ -34,27 +34,29 @@ This is a discord bot that retrieves updates from creators on [kemono.part](http
    git clone https://github.com/AeoviiDark/KemonoBot.git
    ```
 
-2. **Install node.**
+2. **Install Node.**
 
    Download nodejs from [nodejs.org](https://nodejs.org/en/download) and install it. You can confirm your installation with `node -v`.
 
    If you need any help with steps 2-5, [discordjs.guide](https://discordjs.guide/preparations/#installing-node-js) probably explains all of this better under "Installations & Preparations."
 
-3. **Install discordjs**
+3. **Install Discordjs**
 
    In your terminal, run
    ```
    npm install discordjs
    ```
 
-4. **Create a bot on Discord's Developer Portal.**
+4. **Create a bot on Discord's developer portal.**
 
    Go to [Discord's developer portal](https://discord.com/developers/applications) and log into your account. Click on the "New Application" button, enter a name for the application, and confirm the creation. In the "Bot" tab, enter a username for the bot and set the visibility to public or private. Click "Reset Token" and copy this to a secure location. Discord only lets you access this once. If you lose this token, you will have to reset the token to gain another, invalidating the old token. 
 
 5. **Invite your bot to your server.**
    
    In [Discord's developer portal](https://discord.com/developers/applications) and under your newly created application, click on the "OAuth2" tab. In the sidebar under the tab, click "OAuth2 URL generator." Select the `bot` and `applications.commands` scopes. Enable `Read Messagese/View Channels`, `Send Messages`, `Embed Links`, and `Attach Files` permissions.
+   
    Alternatively, you can manually construct an invite link by pasting your bot's client id into this url, replacing the three underscores: `https://discord.com/api/oauth2/authorize?client_id=___&permissions=52224&scope=applications.commands+bot`. (Your client id can be found under OAuth2/General) 
+   
    Finally, open the url and choose the server you would like to add the bot to.
    
 
@@ -62,7 +64,7 @@ This is a discord bot that retrieves updates from creators on [kemono.part](http
 
    You will have a config-example.json in your KemonoBot directory. Create a duplicate and/or open the original with a text editor and enter the following information:
    - `token`: This is the token you should have saved in step 4.
-   - `clientId`: To get your bot's client id, you will have to enable developer mode on your discord client. Click User Settings, Advanced, and enable Developer Mode. Go back, right click the bot in the members list then Copy User ID at the bottom of the list. Alternatively, your client id can be found under OAuth2/General in [Discord's developer portal](https://discord.com/developers/applications).
+   - `clientId`: To get your bot's client id, you will have to enable developer mode on your Discord client. Click User Settings, Advanced, and enable Developer Mode. Go back, right click the bot in the members list then Copy User ID at the bottom of the list. Alternatively, your client id can be found under OAuth2/General in [Discord's developer portal](https://discord.com/developers/applications).
    - `guildId`:  With developer mode enabled, right click your server's name in the top right and Copy Server ID. Set this if you want your bot's commands to be registerd only on this specific server. If instead you want the commands to be registered globally on any server your bot is in, leave this value blank.
    - `interval`: This is how often you want the bot to check for updates. The default is 10 minutes and should accomodate most use cases. Anything lower isn't really necessary but if you need faster updates, the option is there at the cost of more internet bandwidth and compute power. Anything lower than 1 minute is not advised. Do be warned that the time it takes to search for updates is proportional to the amount of added creators, so set the interval accordingly. 
    Once you have your information filled out, save the json file and rename it to `config.json`.
@@ -86,7 +88,7 @@ This is a discord bot that retrieves updates from creators on [kemono.part](http
 
 ## Why is my code so bad?
 
-   Only a week ago I had no idea how to code in javascript. However, I'm somewhat compotent in some other languages so I kind of know what I'm doing half the time. I know my code is ugly, inefficient, and probably has some exploit that I'm too inexperienced to spot. If you do see an improvement or fix to something, let me know and I'll do my best to address it. How you contact me? Uhh... maybe find me on discord? idk if github has a msging thing or if you can request to change code on a repository. tbh this is my first project like on this on github so I've no idea what I'm doing. 
+   Only a week ago I had no idea how to code in javascript. However, I'm somewhat compotent in some other languages so I kind of know what I'm doing half the time. I know my code is ugly, inefficient, and probably has some exploit that I'm too inexperienced to spot. If you do see an improvement or fix to something, create a new issue or let me know and I'll do my best to resolve it. How you contact me? Uhh... maybe find me on discord? idk if github has a msging thing or if you can request to change code on a repository. tbh this is my first project like on this on github so I've no idea what I'm doing. 
 
 ## Known issues. (AKA fix later list)
 - Unknown embedding bug when setting description
