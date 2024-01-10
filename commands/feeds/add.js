@@ -20,7 +20,6 @@ module.exports = {
             const kemono = await read("./data/creators-kemono.json")
             const coomer = await read("./data/creators-coomer.json")
             data = kemono.concat(coomer);
-            console.log('read')
         }
         const filtered = Object.values(data).filter(creator => creator.name.toLowerCase().startsWith(focusedValue.toLowerCase())).slice(0,25);
         await interaction.respond(
