@@ -1,5 +1,5 @@
 ## About
-This is a Discord bot that retrieves updates from creators on [kemono.part](https://kemono.su) and [coomer.party](https://coomer.su). Updates will be sent to a discord server where the creator was added or to a dm if you add a creator in a direct message with the bot.
+This is a Discord bot that retrieves updates from creators on [kemono.party](https://kemono.su) and [coomer.party](https://coomer.su). Updates will be sent to a discord server where the creator was added or to a dm if you add a creator in a direct message with the bot.
 
 ## Discord Commands
 - **`/add`** {name} || {url}
