@@ -14,6 +14,10 @@ This is a Discord bot that retrieves updates from creators on [kemono.party](htt
    <dl>List all creators in the current channel along with some additional information.</dl>
 - **`/version`**
    <dl>Displays the current version of KemonoBot.</dl>
+- **`/changelog`**
+   <dl>Displays the changes made in each version of KemonoBot.</dl>
+- **`/help`**
+   <dl>Show a list of commands and their usage. (You're here!)</dl>
 ### Future Commands
 - **`/info`** {name}
    <dl>Get more information on a specific creator than what /list provides.</dl>
