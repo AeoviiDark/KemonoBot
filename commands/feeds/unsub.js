@@ -31,6 +31,7 @@ module.exports = {
         delSub(interaction, foundCreator)
             .then(res => {
                 interaction.reply(res);
+                console.log(res)
             })
     }
 };

@@ -36,6 +36,7 @@ module.exports = {
         delCreator(interaction, foundCreator)
             .then(res => {
                 interaction.reply(res);
+                console.log(res)
             })
     }
 }
