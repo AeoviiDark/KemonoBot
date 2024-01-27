@@ -13,7 +13,8 @@ module.exports = {
                 .setName('name')
                 .setDescription('The creator for which you want to recieve post notifications for.')
                 .setRequired(true)
-                .setAutocomplete(true)),
+                .setAutocomplete(true))
+        .setDMPermission(false),
     async autocomplete(interaction) {
         const focusedValue = interaction.options.getFocused();
         if (data === null) {
