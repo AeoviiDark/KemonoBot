@@ -1,6 +1,6 @@
 {
   "name": "kemonobot",
-  "version": "0.5.9-alpha",
+  "version": "0.5.10-alpha",
   "description": "",
   "main": "index.js",
   "scripts": {
