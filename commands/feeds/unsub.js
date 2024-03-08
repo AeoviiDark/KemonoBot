@@ -2,8 +2,6 @@ const { SlashCommandBuilder } = require('discord.js');
 const { lookupId } = require('../../lib/util.js');
 const { read, delSub } = require('../../lib/dbms.js');
 
-let data = null;
-
 module.exports = {
     data: new SlashCommandBuilder()
         .setName('unsub')
@@ -17,9 +15,7 @@ module.exports = {
         .setDMPermission(false),
     async autocomplete(interaction) {
         const focusedValue = interaction.options.getFocused();
-        if (data === null) {
-            data = await read()
-        }
+        const data = await read()
         if (data[interaction.guildId] === undefined) {return;}
         if (data[interaction.guildId][interaction.channelId] === undefined) {return;}
         const filtered = Object.values(data[interaction.guildId][interaction.channelId]).filter(creator => creator.subscribers.includes(interaction.member.id) && creator.name.toLowerCase().startsWith(focusedValue.toLowerCase())).slice(0,25);
