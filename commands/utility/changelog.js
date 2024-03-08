@@ -16,6 +16,8 @@ module.exports = {
 **0.5.7** Updated /list printout. Improved autocomplete response time.
 **0.5.8** /add ing creators adds their also adds their posts without sending 50 messages. No more spam.
 **0.5.9** Vastly improved API fetch time. Added /help and /changelog commands.
-**0.5.10** Added timestamps to embedded posts. Fixed embeds with no description. Many minor fixes.`);
+**0.5.10** Added timestamps to embedded posts. Fixed embeds with no description. Many minor fixes.
+**0.5.11** Added default titles for posts with no title.
+**0.5.12** Fixed /sub and /unsub autocomplete results not updating properly.`);
     },
 };
