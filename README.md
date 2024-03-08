@@ -1,6 +1,18 @@
 ## About
 This is a Discord bot that retrieves updates from creators on [kemono.party](https://kemono.su) and [coomer.party](https://coomer.su). Updates will be sent to a discord server where the creator was added or to a dm if you add a creator in a direct message with the bot.
 
+## NOTICE
+KemonoBot will not be recieving any more updates. I enjoyed working on this project and it taught me a lot about APIs, javascript, and designing/storing data in json object structures. Thank you for helping me test what little there was to test lmao.
+
+I'm retiring KemonoBot because I will no longer be using it myself. I've found a better method that achieves exactly what I had envisioned for KemonoBot and more. If anyone would still like me to continue developing KemonoBot, I'll finish the API rewrite and continue to update it albeit even more slowly. Sry.
+
+I am now using a locally hosted RSS server from RSSHub which adapts many websites that dont have RSS available and generates one. The contributers at RSSHub have done this for thousands of sites, Kemono/Coomer.party included. Now that I have an actual RSS feed and not just an imitation of one in a discord channel in the form of a discord bot running on barely stable code, I see no reason to continue to personally use KemonoBot when a much better alternative is available. 
+
+Thank you so much to those that helped me out with this stupid little project of mine. <3
+
+## Disclaimer
+Promoting pirated content (such as the content available on kemono.party and coomer.party) through Discord is against Discord TOS. Use this bot at your own discretion. I am not liable for any repercussions you may encounter.
+
 ## Discord Commands
 - **`/add`** {name} || {url}
    <dl>Add a creator to the current channel.</dl>
@@ -48,7 +60,7 @@ This is a Discord bot that retrieves updates from creators on [kemono.party](htt
 
    In your terminal, run
    ```
-   npm install discordjs
+   npm install discord.js
    ```
 
 4. **Create a bot on Discord's developer portal.**
